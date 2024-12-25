@@ -5,13 +5,17 @@ import(
 )
 
 func main(){
-	var year = 2104
+	var command = "asdfa2sdfasdf"
 
-	var leap = (year%4==0 && year%100!=0) || year%400 == 0
-
-	if(leap){
-		fmt.Println("LEAP")
-	} else {
-		fmt.Println("no leap")
+	switch command{
+	case "go east":
+		fmt.Println("Go east")
+	case "go inside":
+		fmt.Println("Go inside")
+		fallthrough
+	case "asdfasdfasdf":
+		fmt.Println("This is fallthroudh")
+	default:
+		fmt.Println("This is default")
 	}
 }
