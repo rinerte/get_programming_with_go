@@ -1,0 +1,10 @@
+Types
+
+math/big
+
+const can be big
+
+like this
+
+const t = 1000000000000000000000000000000
+
