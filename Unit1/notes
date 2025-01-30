@@ -1,0 +1,21 @@
+lesson 4:
+1)
+In the beggining of the chapter we learn that scopes are for humans
+Lest we forget where are things
+
+There are also benefits: we can reuse names, ha ha
+
+Scopes are in curly braces {}
+
+2)
+There is a way to declare variables not using 'var'
+You can just := it.
+:= can go places var can`t
+luk dis: for a:=1; a<10; a++ {
+    ahaha ahaha
+}
+
+3) Short declaration is not possible in package scope
+
+
+Lesson 5:
