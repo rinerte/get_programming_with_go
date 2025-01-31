@@ -8,3 +8,7 @@ like this
 
 const t = 1000000000000000000000000000000
 
+what is "10" - 1 ?
+
+Booleans in GO don`t have numeric equivalent
+0 != false && 1 !=true
