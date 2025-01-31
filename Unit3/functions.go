@@ -2,15 +2,31 @@ package main
 
 import "fmt"
 
-func kelvinToCelsius(kelvin float64) float64{
-	return kelvin-273.15
+type kelvin float64
+type celsius float64
+type fahrenheit float64
+
+
+func kelvinToCelsius(k kelvin) celsius{
+	return celsius(k-273.15)
 }
-func celsiusToFahrenheit(celsius float64) float64{
-	return celsius*9.0/5.0 + 32.0
+func celsiusToFahrenheit(c celsius) fahrenheit{
+	return fahrenheit(c*9.0/5.0 + 32.0)
 }
-func kelvinToFahrenheit(kelvin float64) float64{
-	return celsiusToFahrenheit(kelvinToCelsius(kelvin))
+func kelvinToFahrenheit(k kelvin) fahrenheit{
+	return celsiusToFahrenheit(kelvinToCelsius(k))
+}
+
+func celsiusToKelvin(c celsius) kelvin{
+	return kelvin(c+273.15)
 }
 func main(){
+
+	var gradus fahrenheit = 2.0
+	fmt.Println(gradus)
 	fmt.Println(kelvinToFahrenheit(0.0))
+
+	fmt.Println(celsiusToKelvin(127))
+	
+	
 }

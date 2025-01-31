@@ -8,3 +8,6 @@ func Atoi(s string) (i int, err error)
 
 SHORTCUT
 git config --global alias.save '!f() { git add . && git commit -m "$1" && git push; }; f'
+
+
+You can make types!
