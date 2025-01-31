@@ -1,0 +1,7 @@
+https://pkg.go.dev/std 
+
+https://gobyexample.com/exit
+
+func Println(a ...interface{}) (n int, err error)
+
+func Atoi(s string) (i int, err error)
