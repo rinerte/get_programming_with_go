@@ -10,11 +10,8 @@ func main(){
 	//ABCZ
 	//var difference = x - 'A'
 	
-	for index, char:=range cipherText {
-		
-		key:= keyword[index%len(keyword)]
-		difference := key - 65
-		result:=(char-rune(difference)-'A'+26)%26+'A'
-		fmt.Printf("%c", result)
+	for index, char:=range cipherText {		
+		key:= rune(keyword[index%len(keyword)])
+		fmt.Printf("%c", (char-key+26)%26+'A')
 	}
 }
