@@ -5,3 +5,6 @@ https://gobyexample.com/exit
 func Println(a ...interface{}) (n int, err error)
 
 func Atoi(s string) (i int, err error)
+
+SHORTCUT
+git config --global alias.save '!f() { git add . && git commit -m "$1" && git push; }; f'
