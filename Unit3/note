@@ -11,3 +11,10 @@ git config --global alias.save '!f() { git add . && git commit -m "$1" && git pu
 
 
 You can make types!
+
+so method is this:
+func (r reciever) methodName() outputType {
+
+}
+
+Reciever is a type that has a method

@@ -20,10 +20,15 @@ func kelvinToFahrenheit(k kelvin) fahrenheit{
 func celsiusToKelvin(c celsius) kelvin{
 	return kelvin(c+273.15)
 }
+
+// method
+func (k kelvin) celsius() celsius{
+	return celsius(k-273.15)
+}
 func main(){
 
-	var gradus fahrenheit = 2.0
-	fmt.Println(gradus)
+	//var gradus fahrenheit = 2.0
+	fmt.Println(kelvin(273.0).celsius())
 	fmt.Println(kelvinToFahrenheit(0.0))
 
 	fmt.Println(celsiusToKelvin(127))
