@@ -1,0 +1,19 @@
+arrays
+
+name:= [2]string{"one","two"}
+
+name2:= [...]string{
+	"One",
+	"Two",
+}
+
+// foreach
+	for index,item:= range array {
+
+	}
+
+// Если в функции параметр [5]type то в неё нельзя передать аргумент [x!=5]type
+// Еще arrays are VALUES, поэтому в функциях мы видим копию массива, не так как в сишарпе
+
+
+
