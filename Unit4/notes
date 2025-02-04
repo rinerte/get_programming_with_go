@@ -15,5 +15,20 @@ name2:= [...]string{
 // Если в функции параметр [5]type то в неё нельзя передать аргумент [x!=5]type
 // Еще arrays are VALUES, поэтому в функциях мы видим копию массива, не так как в сишарпе
 
+SLICES []arrayType, array[startOmitable:endOmitable]
+LENGTH of slice is not part of it's TYPE
+
+ Slices are windows or views into an array.
+ The range keyword can iterate over slices.
+ Slices share the same underlying data when assigned or passed to functions.
+ Composite literals provide a convenient means to initialize slices.
+ You can attach methods to slices.
+
+Если я не ограничу capacity и потом в slice append что-то, то может поменяться оригинальный массив, т.е. array
+
+// MAKE 
+//  make([]string, length, capacity) => make([]string, 0, 10) 
 
 
+Preallocating with make can set an initial capacity, thereby avoiding additional allo-
+cations and copies to enlarge the underlying array.
