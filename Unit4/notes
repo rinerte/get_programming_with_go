@@ -1,3 +1,4 @@
+МАПСЫ ССЫЛОЧНЕ
 arrays
 
 name:= [2]string{"one","two"}
@@ -14,6 +15,9 @@ name2:= [...]string{
 
 // Если в функции параметр [5]type то в неё нельзя передать аргумент [x!=5]type
 // Еще arrays are VALUES, поэтому в функциях мы видим копию массива, не так как в сишарпе
+
+МАПСЫ КСТАТН НЕ КОПИРУЮТСЯ
+
 
 SLICES []arrayType, array[startOmitable:endOmitable]
 LENGTH of slice is not part of it's TYPE
@@ -32,3 +36,13 @@ LENGTH of slice is not part of it's TYPE
 
 Preallocating with make can set an initial capacity, thereby avoiding additional allo-
 cations and copies to enlarge the underlying array.
+
+
+
+if moon, ok := temperature["Moon"]; ok {
+		fmt.Printf("On average the moon is %vº C.\n", moon)
+	} else {
+		fmt.Println("Where is the moon?")
+	}
+
+	МАПСЫ КСТ ССЫЛОЧНЕЫ
