@@ -1,0 +1,25 @@
+Embedding other types: 
+
+
+type sol int
+type report struct {
+	sol
+	location
+	temperature
+}
+Any methods declared on the sol type can be accessed through the sol field or through
+the report type:
+
+
+Name collision^
+
+To prevent name colission of two embeded types
+You must manually forward method to the embedded type of your choosing
+
+func (r report) days(s2 sol) int {
+	return r.sol.days(s2)
+}
+
+
+Embedding is not inheritance !
+
