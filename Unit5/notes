@@ -23,3 +23,6 @@ func (r report) days(s2 sol) int {
 
 Embedding is not inheritance !
 
+
+Interfaces more concerned on what type can do, not on what value it holds
+
