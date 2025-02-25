@@ -9,8 +9,13 @@ type some struct{
 	too string
 }
 
-func main(){
-	b:=some{"Name","boo"}
+func (a *some) rename(b string){
+	a.name = b
+}
 
-	fmt.Printf("%v\n",b)
+func main(){
+	a:=some{"oldName","ha"}
+	fmt.Printf("%v\n",a.name)
+	a.rename("newName")
+	fmt.Printf("%v\n",a.name)
 }
