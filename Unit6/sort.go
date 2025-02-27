@@ -18,4 +18,8 @@ func main(){
 	sortStrings(strs,nil)
 
 	fmt.Println(strs)
+
+	sortStrings(strs,func(i,j int) bool {return len(strs[i])<len(strs[j])})
+
+	fmt.Println(strs)
 }
