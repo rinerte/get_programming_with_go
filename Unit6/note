@@ -1,2 +1,6 @@
 pointers
 errors
+
+
+Though error values are generally preferable to panic, panic is often better than
+os.Exit in that panic will run any deferred functions, whereas os.Exit does not.

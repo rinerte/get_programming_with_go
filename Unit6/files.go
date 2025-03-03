@@ -24,6 +24,7 @@ func main() {
         os.Exit(1)
     }
 
+	fmt.Println(currentPath)
     // Пытаемся подняться до корня
     var lastValidPath string
     for {
@@ -34,7 +35,7 @@ func main() {
         
         lastValidPath = currentPath
         currentPath = 	filepath.Dir(currentPath) 
-        
+        fmt.Println(currentPath)
         if currentPath == filepath.Dir(currentPath) {
             break
         }
