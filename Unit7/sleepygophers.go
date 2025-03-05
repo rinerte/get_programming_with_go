@@ -6,19 +6,19 @@ import (
 )
 
 func main() {
-	c:=make(chan int)
+	c := make(chan int)
 
 	for i := 0; i < 5; i++ {
-		go sleepyGopher(i,c)
+		go sleepyGopher(i, c)
 	}
 	for i := 0; i < 5; i++ {
-		r:= <-c
-		fmt.Println("gopher with id ",r," finished sleeping")
+		r := <-c
+		fmt.Println("gopher with id ", r, " finished sleeping")
 	}
 }
-	
-func sleepyGopher(i int,c chan int) {
+
+func sleepyGopher(i int, c chan int) {
 	time.Sleep(3 * time.Second)
-	fmt.Println("... snore ...",i)
-	c <-i
+	fmt.Println("... snore ...", i)
+	c <- i
 }
