@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"strings"
 )
 
 func main() {
@@ -28,9 +27,9 @@ func filterGopher(upstream, downstream chan string) {
 			downstream <- ""
 			return
 		}
-		if !strings.Contains(item, "bad") {
-			downstream <- item
-		}
+		//if !strings.Contains(item, "bad") {
+		downstream <- item
+		//}
 	}
 }
 
