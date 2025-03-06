@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strings"
 )
 
 func main() {
@@ -17,28 +18,20 @@ func sourceGopher(downstream chan string) {
 	for _, v := range []string{"hello world", "a bad apple", "goodbye all"} {
 		downstream <- v
 	}
-	downstream <- ""
+	close(downstream)
 }
 
 func filterGopher(upstream, downstream chan string) {
-	for {
-		item := <-upstream
-		if item == "" {
-			downstream <- ""
-			return
+	for item := range upstream {
+		if !strings.Contains(item, "bad") {
+			downstream <- item
 		}
-		//if !strings.Contains(item, "bad") {
-		downstream <- item
-		//}
 	}
+	close(downstream)
 }
 
 func printGopher(upstream chan string) {
-	for {
-		v := <-upstream
-		if v == "" {
-			return
-		}
+	for v := range upstream {
 		fmt.Println(v)
 	}
 }
