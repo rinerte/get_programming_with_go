@@ -3,22 +3,33 @@ package main
 import (
 	"fmt"
 	"sync"
-	"time"
 )
 
 func main() {
 	i := 0
 	var mutex sync.Mutex
 
-	go inc(&i, &mutex)
-	go inc(&i, &mutex)
-	go inc(&i, &mutex)
-	time.Sleep(3 * time.Second)
+	var wg sync.WaitGroup
+
+	wg.Add(3)
+	go func() {
+		inc(&i, &mutex)
+		wg.Done()
+	}()
+	go func() {
+		inc(&i, &mutex)
+		wg.Done()
+	}()
+	go func() {
+		inc(&i, &mutex)
+		wg.Done()
+	}()
+	wg.Wait()
 	fmt.Println(i)
 }
 
 func inc(n *int, mutex *sync.Mutex) {
-	for i := 0; i < 10000000; i++ {
+	for i := 0; i < 100000000; i++ {
 		mutex.Lock()
 		*n++
 		mutex.Unlock()
